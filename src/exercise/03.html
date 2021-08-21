@@ -6,26 +6,64 @@
   <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
 
-  <!-- 💣 remove this line
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
-  💣 remove this line -->
 
-  <script type="module">
+  <script type="text/babel">
     // 🐨 on the script tag above, change `type="module"`
     // to `type="text/babel"` so babel will compile this code for the browser to run.
 
     // 🐨 re-implement this using JSX!
-    const element = React.createElement('div', {
-      className: 'container',
-      children: 'Hello World',
-    })
+    // const element = React.createElement('div', {
+    //   className: 'container',
+    //   children: 'Hello World',
+    // })
+    
+    // Exercise
+    // const element = 
+    // <div
+    //   className='container'
+    // >
+    //   Hello World
+    // </div>
+
+    // Extra credit
+    //     See if you can figure out how to extract the `className` (`"container"`) and
+    // `children` (`"Hello World"`) to variables and interpolate them in the JSX.
+
+    // ```jsx
+    // const className = 'container'
+    // const children = 'Hello World'
+    // const element = <div className="hmmm">how do I make this work?</div>
+    // ```
+
+    // const clsName = 'container'
+    // const child = 'Hello World Abdul'
+    // const element =
+    //   <div className = { clsName }>
+    //     { child }
+    //   </div>
+
+      // Extra credit #2
+      // What if I have an object of props that I want applied to the `div` like this:
+
+      // ```jsx
+      const children = 'Hello World'
+      const className = 'container'
+      const props = {children, className}
+      // const element = <div /> // how do I apply props to this div?
+
+      const element = <div {...props}/>
+      console.log(element)
+
+
+
 
     // 💰 there are a few subtle differences between JSX and HTML. One such
     // difference is how you apply a class to an element in JSX is by using
     // `className` rather than `class`!
     // 📜 You can learn the differences between JSX and HTML syntax from the React docs here:
     // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
-
+    
     ReactDOM.render(element, document.getElementById('root'))
-  </script>
+    </script>
 </body>
